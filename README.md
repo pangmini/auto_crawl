@@ -1,5 +1,12 @@
 GIT COMMIT RULE
 
+GIT Branch 만들기
+- git branch (이름) <- (이름) 브랜치 생성
+- git checkout (이름) <- (이름) 브랜치로 이동
+- git commit -m (커밋내용) <- (커밋내용) 로컬에 저장
+- git push origin [branch이름] <- branch이름으로 업로드
+
+
 TYPE
 커밋은 제목,본문,꼬리말로 구성
 - Subject(제목)
