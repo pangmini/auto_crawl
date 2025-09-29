@@ -57,3 +57,9 @@ LLM모델과 requests,selenium을 활용해 크롤링을 진행한다.
 - 개인 branch : 개인이 개발하는 branch
 
 
+명령어(dev)
+Docker 실행 명령어
+- docker-compose up <- Docker 실행 명령어
+- docker-compose down <- Docker 중지 명령어
+
+- docker-compose up --build <- Docker 패키지 다시 묶기 명령어
