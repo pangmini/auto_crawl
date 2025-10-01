@@ -14,3 +14,31 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app
+      - ./backend/prompts:/app/prompts  # 프롬프트 저장 디렉토리를 볼륨으로 마운트
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=config.settings
+      - DATABASE_URL=/app/conversations.db
+      - PYTHONUNBUFFERED=1  # Python 로그를 버퍼링하지 않고 즉시 출력
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  db-viewer:
+    image: datasetteproject/datasette
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend:/app
+      - sqlite_data:/data
+      - ./backend/metadata.json:/data/metadata.json
+    command: >
+      datasette /app/conversations.db 
+      --host 0.0.0.0 
+      --port 8001 
+      --metadata /data/metadata.json
+
+volumes:
+  sqlite_data: {}

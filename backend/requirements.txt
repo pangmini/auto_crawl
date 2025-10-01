@@ -1,3 +1,14 @@
 fastapi==0.103.2
 uvicorn==0.23.2
+sqlalchemy==2.0.21
 pydantic==2.4.2
+python-dotenv==1.0.0
+aiosqlite==0.19.0
+langchain==0.1.1
+langchain-core==0.1.15
+langchain-google-genai==0.0.5
+langchain-openai==0.0.3
+google-generativeai==0.3.2
+django
+djangorestframework
+django-cors-headers
